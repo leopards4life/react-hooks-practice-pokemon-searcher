@@ -15,14 +15,20 @@ function PokemonPage() {
     .then(pokemons => setPokemons(pokemons));
   }, [])
 
+  function handleAddPokemon(newPokemon) {
+    setPokemons([...pokemons, newPokemon]);
+  }
+
     const updatedPokemon = pokemons.filter((pokemon) =>
       pokemon.name.toLowerCase().includes(search.toLowerCase()));
+
 
   return (
     <Container>
       <h1>Pokemon Searcher</h1>
       <br />
-      <PokemonForm />
+      <PokemonForm 
+      onAddPokemon={handleAddPokemon}/>
       <br />
       <Search 
       search={search}

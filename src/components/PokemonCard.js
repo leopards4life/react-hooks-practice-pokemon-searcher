@@ -4,7 +4,7 @@ import { Card } from "semantic-ui-react";
 function PokemonCard({ pokemon }) {
   const { name, hp, sprites } = pokemon;
 
-  const [toggle, setToggle] = useState(false)
+  const [toggle, setToggle] = useState(false);
 
   function handleClick() {
     setToggle((toggle) => !toggle)
